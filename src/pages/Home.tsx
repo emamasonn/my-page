@@ -24,14 +24,19 @@ const Home = () => {
           al repo.
         </Text>
       </Flex>
-      <Flex justifyContent="center" alignItems="center" flexDirection="column">
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+        mt="100px"
+      >
         <Flex w="100%" justifyContent="flex-start" alignItems="center">
           <Text fontSize="4xl" my="30px">
             Posts
           </Text>
         </Flex>
-        <SimpleGrid columns={[1, 2, 3]} spacing={10}>
-          {dataPosts.slice(0, 3).map((post) => (
+        <SimpleGrid columns={[1, 2]} spacing={10}>
+          {dataPosts.slice(0, 2).map((post) => (
             <PostCard
               key={post.path}
               path={post.path}

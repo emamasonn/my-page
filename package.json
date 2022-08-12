@@ -15,6 +15,7 @@
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "^18.0.0",
     "framer-motion": "^7.0.0",
+    "javascript-color-gradient": "^2.4.4",
     "markdown-to-jsx": "^7.1.7",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/javascript-color-gradient": "^2.4.0",
     "@types/react-syntax-highlighter": "^15.5.4"
   }
 }

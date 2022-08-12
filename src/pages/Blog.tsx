@@ -5,7 +5,7 @@ import { dataPosts } from "../dataPosts";
 
 const Blog = () => {
   return (
-    <SimpleGrid columns={[1, 2, 3]} spacing={10}>
+    <SimpleGrid columns={[1, 2]} spacing={5}>
       {dataPosts.map((post) => (
         <PostCard
           key={post.path}

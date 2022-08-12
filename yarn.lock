@@ -2650,6 +2650,11 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/javascript-color-gradient@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@types/javascript-color-gradient/-/javascript-color-gradient-2.4.0.tgz#8c7d7c7a270c9a0f6ffd5beb959e1c89f0e1f3c5"
+  integrity sha512-bDeTAgHvDRn40mlnGRE5nTVlfQ9KRqi9L0VC+zJwVY/XNgulIq9lZxTV9wIi6nfXu/eG4ehKmG3uCq49uYYqDA==
+
 "@types/jest@*":
   version "28.1.6"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-28.1.6.tgz"
@@ -6080,6 +6085,11 @@ jake@^10.8.5:
     chalk "^4.0.2"
     filelist "^1.0.1"
     minimatch "^3.0.4"
+
+javascript-color-gradient@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/javascript-color-gradient/-/javascript-color-gradient-2.4.4.tgz#184dc176cd8f66d212299aa5826843b39229e299"
+  integrity sha512-kbt3Y1eltW4X789P1eQzCUEB5X7hFmLNpQT4bgDFMtj/cW2v+j8ms/rLSR7jndZUAP6yya4vyeZK6bRqh6yClA==
 
 jest-changed-files@^27.5.1:
   version "27.5.1"

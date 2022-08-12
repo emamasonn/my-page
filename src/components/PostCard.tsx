@@ -1,6 +1,8 @@
-import { Box, Image, Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Gradient from "javascript-color-gradient";
+import { motion } from "framer-motion";
 
 type PostCardProps = {
   path: string;
@@ -10,39 +12,77 @@ type PostCardProps = {
 };
 
 const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
+  const colorArr = new Gradient()
+    .setColorGradient("#3F2CAF", "#003566")
+    .setMidpoint(20)
+    .getColors();
+
+  const colorArr1 = new Gradient()
+    .setColorGradient("#FFAAAA", "#fb5607")
+    .setMidpoint(20)
+    .getColors();
+
+  const firstColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+  const secondColor = colorArr1[Math.floor(Math.random() * colorArr1.length)];
+
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={imgUrl} alt="Image post" />
-      <Box p="10px">
-        <Box display="flex" alignItems="baseline">
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-          >
-            {date}
-          </Box>
-        </Box>
-
-        <Text
-          fontSize="xl"
-          mt="5px"
-          fontWeight="semibold"
-          lineHeight="tight"
-          noOfLines={2}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 2 }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <Box
+        h="210px"
+        maxH="210px"
+        borderRadius="lg"
+        overflow="hidden"
+        background={`linear-gradient(to right, ${firstColor}, ${secondColor})`}
+      >
+        <Flex
+          p="10px"
+          justifyContent="space-between"
+          flexDirection="column"
+          h="100%"
         >
-          {title}
-        </Text>
+          <Box>
+            <Box
+              color="gray.500"
+              fontWeight="semibold"
+              letterSpacing="wide"
+              fontSize="sm"
+              textTransform="uppercase"
+            >
+              {date}
+            </Box>
 
-        <Flex justifyContent="flex-end" mt="20px">
-          <Button colorScheme="teal" size="sm">
-            <Link to={`/post/${path}`}>Go</Link>
-          </Button>
+            <Text
+              fontSize={["4xl", "5xl"]}
+              mt="5px"
+              fontWeight="900"
+              lineHeight="55px"
+              noOfLines={2}
+            >
+              {title}
+            </Text>
+          </Box>
+          <Flex justifyContent="flex-end" mt="20px">
+            <Button
+              background={`linear-gradient(to right, ${secondColor}, ${firstColor})`}
+              size="sm"
+              _hover={{
+                bgGradient: `linear-gradient(to right, ${firstColor}, ${secondColor})`,
+              }}
+            >
+              <Link to={`/post/${path}`}>Go</Link>
+            </Button>
+          </Flex>
         </Flex>
       </Box>
-    </Box>
+    </motion.div>
   );
 };
 
