@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Gradient from "javascript-color-gradient";
+//import Gradient from "javascript-color-gradient";
 import { motion } from "framer-motion";
 
 type PostCardProps = {
@@ -12,18 +12,19 @@ type PostCardProps = {
 };
 
 const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
-  const colorArr = new Gradient()
-    .setColorGradient("#3F2CAF", "#003566")
-    .setMidpoint(20)
-    .getColors();
-
-  const colorArr1 = new Gradient()
-    .setColorGradient("#FFAAAA", "#fb5607")
-    .setMidpoint(20)
-    .getColors();
-
-  const firstColor = colorArr[Math.floor(Math.random() * colorArr.length)];
-  const secondColor = colorArr1[Math.floor(Math.random() * colorArr1.length)];
+  // Generate a gradient of colors
+  //const colorArr = new Gradient()
+  //  .setColorGradient("#3F2CAF", "#003566")
+  //  .setMidpoint(20)
+  //  .getColors();
+  //
+  //const colorArr1 = new Gradient()
+  //  .setColorGradient("#FFAAAA", "#fb5607")
+  //  .setMidpoint(20)
+  //  .getColors();
+  //
+  //const firstColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+  //const secondColor = colorArr1[Math.floor(Math.random() * colorArr1.length)];
 
   return (
     <motion.div
@@ -40,7 +41,7 @@ const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
         maxH="210px"
         borderRadius="lg"
         overflow="hidden"
-        background={`linear-gradient(to right, ${firstColor}, ${secondColor})`}
+        background={`linear-gradient(to right, #3F2CAF, #fb5607)`}
       >
         <Flex
           p="10px"
@@ -71,10 +72,10 @@ const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
           </Box>
           <Flex justifyContent="flex-end" mt="20px">
             <Button
-              background={`linear-gradient(to right, ${secondColor}, ${firstColor})`}
+              background="#003566"
               size="sm"
               _hover={{
-                bgGradient: `linear-gradient(to right, ${firstColor}, ${secondColor})`,
+                background: "#3F2CAF",
               }}
             >
               <Link to={`/post/${path}`}>Go</Link>

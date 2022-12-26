@@ -1,5 +1,5 @@
-import { Box, Flex, Link, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
+import { Box, Flex, Link, Text, Tooltip } from "@chakra-ui/react";
 import { FaBeer, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
@@ -10,13 +10,21 @@ const Footer = () => {
       flexDirection="column"
       m="60px"
     >
-      <Text
+      <Box
         fontSize="md"
         display="flex"
         justifyContent="center"
         alignItems="center"
       >
-        David E. Mason
+        <Text
+          fontSize="md"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          David E. Mason
+        </Text>
+
         <Box ml="5px" color="#ED8936" position="relative">
           <Tooltip hasArrow label="Tomemos una birra!" placement="top">
             <Box>
@@ -24,7 +32,7 @@ const Footer = () => {
             </Box>
           </Tooltip>
         </Box>
-      </Text>
+      </Box>
       <Flex m="10px">
         <Link href="https://www.linkedin.com/in/demamason/" m="5px" isExternal>
           <FaLinkedin />

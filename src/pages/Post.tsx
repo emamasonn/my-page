@@ -4,11 +4,23 @@ import Markdown from "markdown-to-jsx";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Code from "../components/Code";
+import TitleH3 from "../components/TitleH3";
+import TitleH5 from "../components/TitleH5";
+import Note from "../components/Note";
 
 const options = {
   overrides: {
     Code: {
       component: Code,
+    },
+    h3: {
+      component: TitleH3,
+    },
+    h5: {
+      component: TitleH5,
+    },
+    Note: {
+      component: Note,
     },
   },
 };
