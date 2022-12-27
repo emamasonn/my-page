@@ -6,6 +6,7 @@ type THeaderProps = {
 };
 
 const Header = ({ children }: THeaderProps) => {
+  console.log("nota");
   return (
     <Flex
       justifyContent="space-between"

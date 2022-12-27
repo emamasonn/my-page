@@ -7,6 +7,8 @@ import Code from "../components/Code";
 import TitleH3 from "../components/TitleH3";
 import TitleH5 from "../components/TitleH5";
 import Note from "../components/Note";
+import UnorderedList from "../components/UnorderedList";
+import Section from "../components/Section";
 
 const options = {
   overrides: {
@@ -21,6 +23,12 @@ const options = {
     },
     Note: {
       component: Note,
+    },
+    UnorderedList: {
+      component: UnorderedList,
+    },
+    Section: {
+      component: Section,
     },
   },
 };
