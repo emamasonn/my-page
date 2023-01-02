@@ -5,7 +5,7 @@ type TTitleH5Props = {
   children: string;
 };
 
-const Title = ({ children }: TTitleH5Props) => {
+const TitleH5 = ({ children }: TTitleH5Props) => {
   return (
     <Heading as="h5" size="sm" mt="10px" mb="10px">
       {children}
@@ -13,4 +13,4 @@ const Title = ({ children }: TTitleH5Props) => {
   );
 };
 
-export default Title;
+export default TitleH5;

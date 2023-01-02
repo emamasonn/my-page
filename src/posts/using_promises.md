@@ -1,24 +1,6 @@
+# Why use Keys prop?
 
-### Why React needs a key prop
-
-##### Unordered
-
-<UnorderedList 
-  items='[
-      "Lorem ipsum dolor sit amet 1",
-      "Consectetur adipiscing elit 2",
-      [
-      "Lorem ipsum dolor sit amet 3",
-      "Consectetur adipiscing elit 4",
-      [
-      "Lorem ipsum dolor sit amet 5",
-      "Consectetur adipiscing elit 6"
-      ]
-      ],
-      "Lorem ipsum dolor sit amet 7",
-      "Consectetur adipiscing elit 8"
-      ]'
-/>
+<MainImage url='/images/keys.jpeg'/>
 
 
 <Section>
@@ -33,33 +15,13 @@ All this extra stuff your forms need to do is just more JavaScript the browser h
 <Section>
 All this extra stuff your forms need to do is just more JavaScript the browser has to execute while the user is interacting with your form. This often leads to performance problems that are tricky. Sometimes there's a particular component that's the obvious problem and optimizing that one component will fix things and you can go on your merry way.
 </Section>
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-<Note>
-cjhbcjhbsd super note
-</Note>
-
 
 ## Code
 
 
 Syntax highlighting
 
-<Code language='javascript'>
+<Code language='javascript' enableCopyToClipboard='true' showLineNumbers='true'>
 function successCallback(result) {
   console.log(\`Audio file ready at URL: ${result}\`);
 }
@@ -69,132 +31,9 @@ function failureCallback(error) {
 createAudioFileAsync(audioSettings, successCallback, failureCallback);
 </Code>
 
-
-
-
-## Tables
-
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-Right aligned columns
-
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+<Code enableCopyToClipboard='false' >
+index.js:1 Warning: Each child in a list should have a unique "key" prop.
+Check the render method of App. See https:reactjs.org/link/warning-keys for more information.
+    at li
+    at App (http:localhost:3000/static/js/30.chunk.js:48:75)
+</Code>

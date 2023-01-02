@@ -7,7 +7,7 @@ const Header = () => {
     <Flex
       justifyContent="space-between"
       alignItems="center"
-      mb="80px"
+      mb={["60px", "100px"]}
       mt="30px"
     >
       <Link to="/">

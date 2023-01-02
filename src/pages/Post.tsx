@@ -9,11 +9,16 @@ import TitleH5 from "../components/TitleH5";
 import Note from "../components/Note";
 import UnorderedList from "../components/UnorderedList";
 import Section from "../components/Section";
+import TitleH1 from "../components/TitleH1";
+import MainImage from "../components/MainImage";
 
 const options = {
   overrides: {
     Code: {
       component: Code,
+    },
+    h1: {
+      component: TitleH1,
     },
     h3: {
       component: TitleH3,
@@ -29,6 +34,9 @@ const options = {
     },
     Section: {
       component: Section,
+    },
+    MainImage: {
+      component: MainImage,
     },
   },
 };

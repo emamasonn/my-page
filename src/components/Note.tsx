@@ -1,12 +1,11 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 
-type THeaderProps = {
+type TNoteProps = {
   children: string;
 };
 
-const Header = ({ children }: THeaderProps) => {
-  console.log("nota");
+const Note = ({ children }: TNoteProps) => {
   return (
     <Flex
       justifyContent="space-between"
@@ -20,4 +19,4 @@ const Header = ({ children }: THeaderProps) => {
   );
 };
 
-export default Header;
+export default Note;

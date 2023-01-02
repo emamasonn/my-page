@@ -5,7 +5,7 @@ type TTitleH3Props = {
   children: string;
 };
 
-const Title = ({ children }: TTitleH3Props) => {
+const TitleH3 = ({ children }: TTitleH3Props) => {
   return (
     <Heading as="h3" size="lg">
       {children}
@@ -13,4 +13,4 @@ const Title = ({ children }: TTitleH3Props) => {
   );
 };
 
-export default Title;
+export default TitleH3;
