@@ -73,7 +73,9 @@ const PostCard = ({ date, id }: PostCardProps) => {
                 borderColor: "#bec3c9",
               }}
             >
-              <Link to={`/post/${id}`}>Leer mas</Link>
+              <Link to={`/post/${id}`}>
+                {i18n({ id: `buttonText.readMore` })}
+              </Link>
             </Button>
           </Flex>
         </Flex>

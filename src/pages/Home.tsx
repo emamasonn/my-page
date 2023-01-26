@@ -1,9 +1,12 @@
 import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
+import { useIntl } from "react-intl";
 import PostCard from "../components/PostCard";
 import { dataPosts } from "../dataPosts";
 
 const Home = () => {
+  const { formatMessage: i18n } = useIntl();
+
   return (
     <>
       <Flex
@@ -15,14 +18,9 @@ const Home = () => {
         fontWeight="300"
       >
         <Text fontSize={["md", "xl"]} mb="20px" lineHeight="24px">
-          Hola! Soy David y trabajo como desarrollador. Me gusta encontrar
-          soluciones de calidad a traves de la tecnologia.
+          {i18n({ id: `home.firstText` })}
         </Text>
-        <Text fontSize={["md", "xl"]}>
-          En este sitio vas a encontrar principalmente contenido sobre el
-          desarrollo de aplicaciones y buenas practicas. Ademas de alguna que
-          otra cosa que me parezca interesante de compratir.
-        </Text>
+        <Text fontSize={["md", "xl"]}>{i18n({ id: `home.secondText` })}</Text>
       </Flex>
       <Flex
         justifyContent="center"

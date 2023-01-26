@@ -1,5 +1,12 @@
 {
   "titles": {
     "whyIsImportTheKeysInReact": "Why is important the Keys in React"
+  },
+  "buttonText": {
+    "readMore": "Read more"
+  },
+  "home": {
+    "firstText": "Hi! I’m David and I work as a developer. I like to find quality solutions through technology, also I always like to be in constant learning.",
+    "secondText": "Therefore, in this site you will find information about application development and best practices. Also, something that I find interesting to share with you."
   }
 }
