@@ -7,13 +7,7 @@ const Blog = () => {
   return (
     <SimpleGrid columns={[1, 2]} spacing={5}>
       {dataPosts.map((post) => (
-        <PostCard
-          key={post.path}
-          path={post.path}
-          title={post.title}
-          date={post.date}
-          imgUrl={post.imgUrl}
-        />
+        <PostCard key={post.id} id={post.id} date={post.date} />
       ))}
     </SimpleGrid>
   );

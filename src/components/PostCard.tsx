@@ -3,28 +3,16 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 //import Gradient from "javascript-color-gradient";
 import { motion } from "framer-motion";
+import { useIntl } from "react-intl";
 
 type PostCardProps = {
-  path: string;
-  title: string;
+  id: string;
   date: string;
-  imgUrl: string;
 };
 
-const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
-  // Generate a gradient of colors
-  //const colorArr = new Gradient()
-  //  .setColorGradient("#3F2CAF", "#003566")
-  //  .setMidpoint(20)
-  //  .getColors();
-  //
-  //const colorArr1 = new Gradient()
-  //  .setColorGradient("#FFAAAA", "#fb5607")
-  //  .setMidpoint(20)
-  //  .getColors();
-  //
-  //const firstColor = colorArr[Math.floor(Math.random() * colorArr.length)];
-  //const secondColor = colorArr1[Math.floor(Math.random() * colorArr1.length)];
+const PostCard = ({ date, id }: PostCardProps) => {
+  const { formatMessage: i18n } = useIntl();
+  const i18nNs = "titles";
 
   return (
     <motion.div
@@ -39,9 +27,10 @@ const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
       <Box
         h="210px"
         maxH="210px"
-        borderRadius="lg"
+        borderRadius="10px"
         overflow="hidden"
-        background={`linear-gradient(to right, #3F2CAF, #fb5607)`}
+        background="#343a46"
+        padding="8px"
       >
         <Flex
           p="10px"
@@ -54,31 +43,37 @@ const PostCard = ({ date, imgUrl, path, title }: PostCardProps) => {
               color="gray.500"
               fontWeight="semibold"
               letterSpacing="wide"
-              fontSize="sm"
+              fontSize={["sm", "md"]}
               textTransform="uppercase"
             >
               {date}
             </Box>
 
             <Text
-              fontSize={["4xl", "5xl"]}
+              fontSize={["2xl", "3xl"]}
               mt="5px"
               fontWeight="900"
-              lineHeight="55px"
+              lineHeight={["35px", "45px"]}
               noOfLines={2}
             >
-              {title}
+              {i18n({ id: `${i18nNs}.whyIsImportTheKeysInReact` })}
             </Text>
           </Box>
           <Flex justifyContent="flex-end" mt="20px">
             <Button
-              background="#003566"
-              size="sm"
+              size={["sm"]}
+              bg="#DD6B20"
+              variant="solid"
               _hover={{
-                background: "#3F2CAF",
+                bg: "#fb5407de",
+              }}
+              _active={{
+                bg: "#fb5407de",
+                transform: "scale(0.98)",
+                borderColor: "#bec3c9",
               }}
             >
-              <Link to={`/post/${path}`}>Go</Link>
+              <Link to={`/post/${id}`}>Leer mas</Link>
             </Button>
           </Flex>
         </Flex>

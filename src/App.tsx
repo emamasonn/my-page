@@ -8,31 +8,35 @@ import Footer from "./components/Footer";
 import Post from "./pages/Post";
 import theme from "./theme";
 
+import IntlProvider from "./intl/IntlProvider";
+
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <Flex justifyContent="center" height="100vh">
-          <Flex
-            w="100%"
-            maxW="900px"
-            p="20px"
-            flexDirection="column"
-            justifyContent="space-between"
-          >
-            <Box>
-              <Header />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="blog" element={<Blog />} />
-                <Route path="post/:key" element={<Post />} />
-              </Routes>
-            </Box>
-            <Footer />
+    <IntlProvider>
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <Flex justifyContent="center" height="100vh">
+            <Flex
+              w="100%"
+              maxW="900px"
+              p="20px"
+              flexDirection="column"
+              justifyContent="space-between"
+            >
+              <Box>
+                <Header />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="blog" element={<Blog />} />
+                  <Route path="post/:key" element={<Post />} />
+                </Routes>
+              </Box>
+              <Footer />
+            </Flex>
           </Flex>
-        </Flex>
-      </BrowserRouter>
-    </ChakraProvider>
+        </BrowserRouter>
+      </ChakraProvider>
+    </IntlProvider>
   );
 }
 

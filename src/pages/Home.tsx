@@ -14,36 +14,30 @@ const Home = () => {
         letterSpacing="1px"
         fontWeight="300"
       >
-        <Text fontSize="xl" mb="30px" lineHeight="24px">
-          Hola! Soy David, desarrollador. Asi como la practica hace al maestro.
-          En este blog vas a encontrar sobre los topic que vaya a aprendiendo y
-          tenga que ganas de hablar.
+        <Text fontSize={["md", "xl"]} mb="20px" lineHeight="24px">
+          Hola! Soy David y trabajo como desarrollador. Me gusta encontrar
+          soluciones de calidad a traves de la tecnologia.
         </Text>
-        <Text fontSize="xl">
-          Cualquier comentario que tengan no duden en decirme o de mandar un PR
-          al repo.
+        <Text fontSize={["md", "xl"]}>
+          En este sitio vas a encontrar principalmente contenido sobre el
+          desarrollo de aplicaciones y buenas practicas. Ademas de alguna que
+          otra cosa que me parezca interesante de compratir.
         </Text>
       </Flex>
       <Flex
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
-        mt="100px"
+        mt={["50px", "100px"]}
       >
         <Flex w="100%" justifyContent="flex-start" alignItems="center">
-          <Text fontSize="4xl" my="30px">
+          <Text fontSize={["2xl", "3xl", "4xl"]} mb="30px">
             Posts
           </Text>
         </Flex>
         <SimpleGrid columns={[1, 2]} spacing={10}>
           {dataPosts.slice(0, 2).map((post) => (
-            <PostCard
-              key={post.path}
-              path={post.path}
-              title={post.title}
-              date={post.date}
-              imgUrl={post.imgUrl}
-            />
+            <PostCard key={post.id} id={post.id} date={post.date} />
           ))}
         </SimpleGrid>
       </Flex>
