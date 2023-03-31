@@ -6,6 +6,6 @@ type TDataPosts = {
 export const dataPosts: TDataPosts[] = [
   {
     id: "whyIsImportTheKeysInReact",
-    date: "21/1/2023",
+    date: "31/03/2023",
   },
 ];

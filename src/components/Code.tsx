@@ -26,8 +26,6 @@ const Code = ({
     }, 1500);
   }, []);
 
-  console.log("children", children);
-
   return (
     <Box position="relative" borderRadius="20px">
       {enableCopyToClipboard && (

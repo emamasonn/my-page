@@ -1,7 +1,7 @@
 import { Box, CircularProgress, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Markdown from "markdown-to-jsx";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Code from "../components/Code";
 import TitleH3 from "../components/TitleH3";
@@ -11,6 +11,9 @@ import UnorderedList from "../components/UnorderedList";
 import Section from "../components/Section";
 import TitleH1 from "../components/TitleH1";
 import MainImage from "../components/MainImage";
+
+import Image from "../components/Image";
+import { I18nProviderContext } from "../intl/IntlProvider";
 
 const options = {
   overrides: {
@@ -38,6 +41,9 @@ const options = {
     MainImage: {
       component: MainImage,
     },
+    Image: {
+      component: Image,
+    },
   },
 };
 
@@ -47,10 +53,11 @@ const Post = () => {
   const [isLoading, setIsLoading] = useState<"loading" | "error" | "success">(
     "loading"
   );
+  const { language } = useContext(I18nProviderContext);
 
   useEffect(() => {
     setIsLoading("loading");
-    import(`../posts/${key}.md`)
+    import(`../posts/${key}-${language}.md`)
       .then((res) => {
         fetch(res.default)
           .then((res) => res.text())
@@ -63,8 +70,11 @@ const Post = () => {
             setIsLoading("error");
           });
       })
-      .catch((err) => console.log(err));
-  }, [key]);
+      .catch((err) => {
+        console.log(err);
+        setIsLoading("error");
+      });
+  }, [key, language]);
 
   if (isLoading === "loading") {
     return (
@@ -75,7 +85,11 @@ const Post = () => {
   }
 
   if (isLoading === "error") {
-    return <>An error occurred while loading the post.</>;
+    return (
+      <Flex justifyContent="center" alignItems="center">
+        An error occurred while loading the post.
+      </Flex>
+    );
   }
 
   if (!markdown && isLoading === "success") {
