@@ -10,16 +10,15 @@ const ButtonLanguage = () => {
       <Button
         onClick={() => changeLanguage(language === "es" ? "en" : "es")}
         size={["xs"]}
-        bg="#DD6B20"
+        bg="#fc0283"
         variant="solid"
         textTransform="uppercase"
         _hover={{
-          bg: "#fb5407de",
+          bg: "#fc0283",
         }}
         _active={{
-          bg: "#fb5407de",
+          bg: "#fc0283",
           transform: "scale(0.98)",
-          borderColor: "#bec3c9",
         }}
       >
         {language}

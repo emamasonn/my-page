@@ -16,9 +16,6 @@ const PostCard = ({ date, id }: PostCardProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: "easeOut", duration: 2 }}
       whileHover={{
         scale: 1.02,
         transition: { duration: 0.3 },
@@ -29,7 +26,7 @@ const PostCard = ({ date, id }: PostCardProps) => {
         maxH="210px"
         borderRadius="10px"
         overflow="hidden"
-        background="#343a46"
+        background="#0f2648"
         padding="8px"
       >
         <Flex
@@ -40,7 +37,7 @@ const PostCard = ({ date, id }: PostCardProps) => {
         >
           <Box>
             <Box
-              color="gray.500"
+              color="#c2a5b4"
               fontWeight="semibold"
               letterSpacing="wide"
               fontSize={["sm", "md"]}
@@ -55,6 +52,7 @@ const PostCard = ({ date, id }: PostCardProps) => {
               fontWeight="900"
               lineHeight={["35px", "45px"]}
               noOfLines={2}
+              color="#f9b4d7"
             >
               {i18n({ id: `${i18nNs}.whyIsImportTheKeysInReact` })}
             </Text>
@@ -62,15 +60,16 @@ const PostCard = ({ date, id }: PostCardProps) => {
           <Flex justifyContent="flex-end" mt="20px">
             <Button
               size={["sm"]}
-              bg="#DD6B20"
-              variant="solid"
+              color="#fc0283"
+              colorScheme="#fc0283"
+              variant="outline"
               _hover={{
-                bg: "#fb5407de",
+                bg: "#fc0283",
+                color: "#f9b4d7",
               }}
               _active={{
-                bg: "#fb5407de",
+                bg: "#fc0283",
                 transform: "scale(0.98)",
-                borderColor: "#bec3c9",
               }}
             >
               <Link to={`/post/${id}`}>

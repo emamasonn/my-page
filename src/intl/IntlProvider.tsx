@@ -32,7 +32,7 @@ const flattenMessages = (nestedMessages: any, prefix = "") => {
 };
 
 const IntlProvider = ({ children }: any) => {
-  const [language, setLanguage] = useState<TLanguages>("es");
+  const [language, setLanguage] = useState<TLanguages>("en");
 
   const changeLanguage = useCallback((lang: TLanguages) => {
     setLanguage(lang);
