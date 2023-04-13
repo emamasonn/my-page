@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { Box, Flex } from "@chakra-ui/react";
 import SocialMedia from "../components/SocialMedia";
+import useWindowResize from "../hooks/useWindowResize";
 
 type ContainerLayoutProps = {
   children: React.ReactNode;
 };
 
 const ContainerLayout = ({ children }: ContainerLayoutProps) => {
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-    };
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
+  const windowSize = useWindowResize();
 
   return (
     <Flex

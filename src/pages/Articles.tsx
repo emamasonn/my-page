@@ -4,7 +4,7 @@ import { Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { dataPosts } from "../dataPosts";
 import { motion } from "framer-motion";
 
-const Blog = () => {
+const Articles = () => {
   return (
     <Flex flexDirection="column">
       <motion.div
@@ -25,4 +25,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Articles;

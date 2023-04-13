@@ -2,7 +2,7 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
+import Articles from "./pages/Articles";
 import Post from "./pages/Post";
 import theme from "./theme";
 
@@ -19,7 +19,7 @@ function App() {
           <ContainerLayout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="blog" element={<Blog />} />
+              <Route path="Articles" element={<Articles />} />
               <Route path="post/:key" element={<Post />} />
               <Route path="experience" element={<Experience />} />
               <Route path="about" element={<About />} />
