@@ -10,6 +10,12 @@ import { motion } from "framer-motion";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const SocialMedia = () => {
+  const urlSocialMedia = [
+    { url: "https://www.linkedin.com/in/demamason/", icon: <FaLinkedin /> },
+    { url: "https://github.com/emamasonn", icon: <FaGithub /> },
+    { url: "https://twitter.com/meisonsays", icon: <FaTwitter /> },
+  ];
+
   return (
     <motion.div
       variants={{
@@ -27,41 +33,28 @@ const SocialMedia = () => {
       animate="visible"
     >
       <Flex
-        flexDirection={["row", "column"]}
-        justifyContent={["center", "space-between"]}
+        flexDirection="column"
+        justifyContent="space-between"
         alignItems="center"
         w="fit-content"
         position="fixed"
         bottom="0"
       >
         <UnorderedList listStyleType="none" m="0px" spacing="30px">
-          <ListItem
-            fontSize="25px"
-            transition="all 0.5s ease-out"
-            _hover={{ transform: "translate(0px, 4px)", color: "#fc0283" }}
-          >
-            <Link href="https://www.linkedin.com/in/demamason/" isExternal>
-              <FaLinkedin />
-            </Link>
-          </ListItem>
-          <ListItem
-            fontSize="25px"
-            transition="all 0.5s ease-out"
-            _hover={{ transform: "translate(0px, 4px)", color: "#fc0283" }}
-          >
-            <Link href="https://github.com/emamasonn" isExternal>
-              <FaGithub />
-            </Link>
-          </ListItem>
-          <ListItem
-            fontSize="25px"
-            transition="all 0.5s ease-out"
-            _hover={{ transform: "translate(0px, 4px)", color: "#fc0283" }}
-          >
-            <Link href="https://twitter.com/meisonsays" isExternal>
-              <FaTwitter />
-            </Link>
-          </ListItem>
+          {urlSocialMedia.map((sm) => {
+            return (
+              <ListItem
+                key={sm.url}
+                fontSize="25px"
+                transition="all 0.5s ease-out"
+                _hover={{ transform: "translate(0px, 4px)", color: "#fc0283" }}
+              >
+                <Link href={sm.url} isExternal>
+                  {sm.icon}
+                </Link>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
         <Center height="150px" mt="30px">
           <Divider orientation="vertical" />
