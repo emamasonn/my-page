@@ -4,7 +4,7 @@ import {
   Tabs,
   TabList,
   TabPanels,
-  Tab,
+  Tab as CTab,
   TabPanel,
   UnorderedList,
   ListItem,
@@ -12,7 +12,25 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
+type TTabProps = {
+  company: string;
+};
+
+const Tab = ({ company }: TTabProps) => {
+  return (
+    <CTab
+      _selected={{ color: "#fc0283", borderBottomColor: "#fc0283" }}
+      _hover={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
+      _active={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
+    >
+      {company}
+    </CTab>
+  );
+};
+
 const Experience = () => {
+  const companies = ["Scale AI", "Outside The Cube", "Coderhood"];
+
   return (
     <Flex flexDirection="column">
       <motion.div
@@ -29,34 +47,15 @@ const Experience = () => {
         initial="hidden"
         animate="visible"
       >
-        <Heading>Where I’ve Worked</Heading>
+        <Heading>My experience</Heading>
         <Flex mt="70px" justifyContent="center">
           <Flex w="100%" maxW="700px">
             <Tabs isFitted w="100%" variant="line">
               <TabList>
-                <Tab
-                  _selected={{ color: "#fc0283", borderBottomColor: "#fc0283" }}
-                  _hover={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                  _active={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                >
-                  Scale AI
-                </Tab>
-                <Tab
-                  _selected={{ color: "#fc0283", borderBottomColor: "#fc0283" }}
-                  _hover={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                  _active={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                >
-                  Outside The Cub
-                </Tab>
-                <Tab
-                  _selected={{ color: "#fc0283", borderBottomColor: "#fc0283" }}
-                  _hover={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                  _active={{ color: "#f9b4d7", borderBottomColor: "#f9b4d7" }}
-                >
-                  Coderhood
-                </Tab>
+                {companies.map((company) => (
+                  <Tab company={company} />
+                ))}
               </TabList>
-
               <TabPanels>
                 <TabPanel>
                   <Heading as="h3" size="lg" mt="10px">
