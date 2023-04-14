@@ -49,7 +49,7 @@ const Contact = () => {
           Contact me! <FaHandSpock style={{ marginLeft: "10px" }} />
         </Heading>
 
-        <Text textAlign="center">
+        <Text textAlign="center" maxW="400px">
           I am always open to hear about new job opportunities. If you have any
           questions or just want to say hello or have a drink feel free to talk.
         </Text>
