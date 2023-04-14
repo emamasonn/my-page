@@ -9,6 +9,8 @@ import IntlProvider from "./intl/IntlProvider";
 import ContainerLayout from "./layout/ContainerLayout";
 import Experience from "./pages/Experience";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Route path="post/:key" element={<Post />} />
               <Route path="experience" element={<Experience />} />
               <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<Page404 />} />
             </Routes>
           </ContainerLayout>
         </BrowserRouter>

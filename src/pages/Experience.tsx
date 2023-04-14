@@ -53,7 +53,7 @@ const Experience = () => {
             <Tabs isFitted w="100%" variant="line">
               <TabList>
                 {companies.map((company) => (
-                  <Tab company={company} />
+                  <Tab key={company} company={company} />
                 ))}
               </TabList>
               <TabPanels>
