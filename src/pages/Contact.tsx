@@ -6,9 +6,10 @@ import {
   Text,
   Button,
   Box,
+  Heading,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub, FaHandSpock } from "react-icons/fa";
 
 const Contact = () => {
   const urlSocialMedia = [
@@ -38,6 +39,20 @@ const Contact = () => {
         h="400px"
         color="#f7b2d7"
       >
+        <Heading
+          w="100%"
+          display="flex"
+          justifyContent="flex-start"
+          alignItems="center"
+          mb="50px"
+        >
+          Contact me! <FaHandSpock style={{ marginLeft: "10px" }} />
+        </Heading>
+
+        <Text textAlign="center">
+          I am always open to hear about new job opportunities. If you have any
+          questions or just want to say hello or have a drink feel free to talk.
+        </Text>
         <Text my="20px">emamasonn@gmail.com</Text>
         <Box>
           <UnorderedList listStyleType="none" display="flex" my="20px">
@@ -80,7 +95,15 @@ const Contact = () => {
             transform: "scale(0.98)",
           }}
         >
-          Resume
+          <Link
+            href="resume/resume.pdf"
+            isExternal
+            target="_blank"
+            download="David Mason's Resume"
+            _hover={{ textDecoration: "none" }}
+          >
+            Resume
+          </Link>
         </Button>
       </Flex>
     </motion.div>
