@@ -94,10 +94,12 @@ const Home = () => {
         animate="visible"
       >
         <Text maxW="540px" fontSize={["15px", "17px", "17px"]} mt="20px">
-          I like to create quality applications of all kinds but I like more
-          when there is a need to experiment. I usually focus on the front-end
-          but I also participate to a lesser extent in the back-end, that allows
-          me to have a broader vision of development.
+          I really enjoy creating high-quality applications of all types, but
+          what I love even more is when there's an opportunity to experiment and
+          try new things. While I tend to focus on the front-end, I also like to
+          get involved in the back-end to gain a more well-rounded perspective
+          on development. Overall, I'm passionate about creating great software
+          to help people!
         </Text>
       </motion.div>
     </Flex>
