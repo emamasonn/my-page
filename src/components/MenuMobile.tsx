@@ -169,7 +169,7 @@ const MenuMobile = () => {
               text="Experience"
             />
           </motion.div>
-
+          {/*
           <motion.div
             variants={{
               open: {
@@ -197,7 +197,7 @@ const MenuMobile = () => {
               text="Articles"
             />
           </motion.div>
-
+          */}
           <motion.div
             variants={{
               open: {

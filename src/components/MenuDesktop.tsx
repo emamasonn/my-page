@@ -46,7 +46,7 @@ const MenuDesktop = () => {
     <Flex
       justifyContent="space-between"
       alignItems="center"
-      maxWidth="300px"
+      maxWidth="220px"
       w="100%"
     >
       <motion.div
@@ -83,7 +83,7 @@ const MenuDesktop = () => {
       >
         <NavLink route="/experience" text="Experience" />
       </motion.div>
-
+      {/*
       <motion.div
         variants={{
           hidden: { y: -100, opacity: 0 },
@@ -101,7 +101,7 @@ const MenuDesktop = () => {
       >
         <NavLink route="/articles" text="Articles" />
       </motion.div>
-
+*/}
       <ButtonLanguage />
     </Flex>
   );
